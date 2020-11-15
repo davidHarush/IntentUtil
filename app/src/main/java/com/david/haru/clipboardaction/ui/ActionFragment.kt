@@ -1,16 +1,27 @@
 package com.david.haru.clipboardaction.ui
 
+import android.Manifest
+import android.content.DialogInterface
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.telephony.PhoneNumberUtils
 import android.util.Log
 import android.util.Patterns
 import androidx.annotation.StringRes
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.david.haru.clipboardaction.BuildConfig
 import com.david.haru.clipboardaction.R
-import com.david.haru.intentUtil.CustomIntents
 import com.david.haru.intentUtil.IntentUtil
+import com.david.haru.intentUtil.CustomIntents
 import com.david.haru.myextensions.showToast
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.lang.Exception
 
 
 /**
@@ -47,6 +58,7 @@ class ActionFragment : PreferenceFragmentCompat(), IntentUtil.CallBack {
         setGoogleSearch()
 
 
+
     }
 
     private fun setGoogleSearch() {
@@ -54,6 +66,7 @@ class ActionFragment : PreferenceFragmentCompat(), IntentUtil.CallBack {
             IntentUtil(CustomIntents.GoogleSearch(textData)).start(this)
             true
         }
+
     }
 
     private fun setMessagesActions() {
