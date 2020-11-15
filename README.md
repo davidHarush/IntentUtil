@@ -1,5 +1,10 @@
 # IntentUtil
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/davidHarush/IntentUtil)
+![GitHub top language](https://img.shields.io/github/languages/top/davidHarush/IntentUtil)
+![GitHub repo size](https://img.shields.io/github/repo-size/davidHarush/IntentUtil)
+![GitHub issues](https://img.shields.io/github/issues/davidHarush/IntentUtil)
+
 ## Installation.
 Step 1. Add the JitPack repository to your build file. <br>
 Add it in your root build.gradle at the end of repositories:
