@@ -1,0 +1,3 @@
+include ':IntentUtil'
+include ':app'
+rootProject.name = "Clipboard Action"

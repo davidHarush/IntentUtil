@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Clipboard Action</string>
+
+    <string name="no_data_found">No data found</string>
+
+    <string name="messages">messages</string>
+    <string name="send_whatsApp">Send whatsApp</string>
+    <string name="send_sms">Send sms</string>
+    <string name="send_email">Send email</string>
+    <string name="other_options">other options</string>
+    <string name="make_a_call">Make a call</string>
+    <string name="google_search">Google search</string>
+
+
+</resources>

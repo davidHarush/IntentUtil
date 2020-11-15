@@ -1,0 +1,42 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:title="@string/messages">
+
+        <Preference
+            app:icon="@drawable/ic_whatsapp"
+            app:key="@string/send_whatsApp"
+            app:layout="@layout/custom_preference"
+            app:title="@string/send_whatsApp" />
+        <Preference
+            app:icon="@drawable/ic_sms"
+            app:key="@string/send_sms"
+            app:layout="@layout/custom_preference"
+            app:title="@string/send_sms" />
+        <Preference
+            app:icon="@drawable/ic_at"
+            app:key="@string/send_email"
+            app:layout="@layout/custom_preference"
+            app:title="@string/send_email" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:title="@string/other_options">
+        <Preference
+            app:icon="@drawable/ic_phone_call"
+            app:key="@string/make_a_call"
+            app:layout="@layout/custom_preference"
+            app:title="@string/make_a_call" />
+        <Preference
+            app:icon="@drawable/ic_search"
+            app:key="@string/google_search"
+            app:layout="@layout/custom_preference"
+            app:title="@string/google_search" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
