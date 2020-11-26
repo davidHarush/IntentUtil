@@ -104,6 +104,7 @@ class CustomIntents {
         override val intent: Intent
             get() = Intent().apply {
                 action = Intent.ACTION_SEND
+                setType("text/plain")
                 putExtra(Intent.EXTRA_TEXT, msg)
             }
     }
