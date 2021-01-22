@@ -24,18 +24,60 @@
 
     <PreferenceCategory
         app:allowDividerAbove="false"
-        app:allowDividerBelow="false"
-        app:title="@string/other_options">
+        app:title="@string/contact_options"
+        app:allowDividerBelow="true" >
+    <Preference
+        app:icon="@drawable/ic_phone_call"
+        app:key="@string/make_a_call"
+        app:layout="@layout/custom_preference"
+        app:title="@string/make_a_call" />
         <Preference
-            app:icon="@drawable/ic_phone_call"
-            app:key="@string/make_a_call"
+            app:icon="@drawable/ic_contact"
+            app:key="@string/add_contact"
             app:layout="@layout/custom_preference"
-            app:title="@string/make_a_call" />
+            app:title="@string/add_contact" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:title="@string/internet_options">
         <Preference
             app:icon="@drawable/ic_search"
             app:key="@string/google_search"
             app:layout="@layout/custom_preference"
             app:title="@string/google_search" />
+
+        <Preference
+            app:icon="@drawable/ic_browser"
+            app:key="@string/load_url"
+            app:layout="@layout/custom_preference"
+            app:title="@string/load_url" />
+
+
+        <Preference
+            app:icon="@drawable/ic_hyperlink"
+            app:key="@string/remove_utm"
+            app:layout="@layout/custom_preference"
+            app:title="@string/remove_utm" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:allowDividerAbove="false"
+        app:allowDividerBelow="false"
+        app:title="@string/other_options">
+
+        <Preference
+            app:icon="@drawable/ic_copy_to_clipboard"
+            app:key="@string/copy_to_clipboard"
+            app:layout="@layout/custom_preference"
+            app:title="@string/copy_to_clipboard" />
+
+        <Preference
+            app:icon="@drawable/ic_share"
+            app:key="@string/more_share_options"
+            app:layout="@layout/custom_preference"
+            app:title="@string/more_share_options" />
 
     </PreferenceCategory>
 

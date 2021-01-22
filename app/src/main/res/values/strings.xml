@@ -8,8 +8,16 @@
     <string name="send_sms">Send sms</string>
     <string name="send_email">Send email</string>
     <string name="other_options">other options</string>
+    <string name="internet_options">internet options</string>
+    <string name="contact_options">contact options</string>
     <string name="make_a_call">Make a call</string>
     <string name="google_search">Google search</string>
+    <string name="remove_utm">Remove UTM</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="more_share_options">More share options</string>
+    <string name="load_url">Open in browser</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="add_contact">Add to contacts</string>
 
 
 </resources>

@@ -11,4 +11,6 @@
     <color name="background">#FFFFFFFF</color>
     <color name="background_invert">#FF000000</color>
 
+    <color name="deactivated_action_item_color">#666200EE</color>
+
 </resources>
