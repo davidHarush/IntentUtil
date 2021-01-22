@@ -1,6 +1,9 @@
 package com.david.haru.intentUtil
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.fragment.app.Fragment
 
 /**
@@ -72,6 +75,16 @@ class IntentUtil(private val simpleIntent: SimpleIntent, private val callBack: C
         }
     }
 
-
+    companion object {
+        fun copyToClipboard(ctx: Context?, text: CharSequence) {
+            ctx?.copyToClipboard(text)
+        }
+    }
 }
 
+
+fun Context.copyToClipboard(text: CharSequence){
+    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText("label",text)
+    clipboard.setPrimaryClip(clip)
+}

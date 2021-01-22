@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.provider.ContactsContract
 import android.provider.Settings
 import android.webkit.URLUtil
 import androidx.annotation.RequiresApi
@@ -84,7 +85,7 @@ class CustomIntents {
         override val intent: Intent
             get() = Intent().apply {
                 action = Intent.ACTION_VIEW
-                type = "vnd.android-dir/mms-sms";
+                type = "vnd.android-dir/mms-sms"
                 putExtra("address", number)
                 putExtra("sms_body", msg)
             }
@@ -104,11 +105,35 @@ class CustomIntents {
         override val intent: Intent
             get() = Intent().apply {
                 action = Intent.ACTION_SEND
-                setType("text/plain")
+                type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, msg)
             }
     }
 
+
+    //=========================
+    class AddToContacts(private val phone: String = "", private val email: String = "") : SimpleIntent() {
+        override val intent: Intent
+            get() = Intent().apply {
+                if(email.isNotEmpty()) {
+                    putExtra(ContactsContract.Intents.Insert.EMAIL, email)
+                    putExtra(ContactsContract.Intents.Insert.EMAIL_TYPE,
+                        ContactsContract.CommonDataKinds.Email.TYPE_WORK
+                    )
+                }
+                if(phone.isNotEmpty()) {
+                    putExtra(ContactsContract.Intents.Insert.PHONE, phone)
+                    putExtra(ContactsContract.Intents.Insert.PHONE_TYPE,
+                        ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE
+                    )
+                }
+
+                action = ContactsContract.Intents.Insert.ACTION
+                type = ContactsContract.RawContacts.CONTENT_TYPE
+
+//                putExtra(Intent.EXTRA_TEXT, phone) //todo remove?
+            }
+    }
     //=========================
     class OpenUrlInBrowser(private val url: String = "") : SimpleIntent() {
         override val intent: Intent
@@ -125,14 +150,16 @@ class CustomIntents {
     //=========================
     class PhoneCall(private val number: String = "", private val context: Context) :
         SimpleIntent() {
+        val dial = "tel:$number"
         override val intent: Intent
             get() = if (context.checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                 Intent(Intent.ACTION_CALL).apply {
-                    val dial = "tel:$number"
                     data = Uri.parse(dial)
                 }
             } else {
-                Intent()
+                Intent(Intent.ACTION_DIAL).apply {
+                    data = Uri.parse(dial)
+                }
             }
     }
 
