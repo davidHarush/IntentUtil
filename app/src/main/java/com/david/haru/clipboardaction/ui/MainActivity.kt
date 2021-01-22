@@ -28,9 +28,7 @@ class MainActivity : AppCompatActivity(), ActionFragment.ActionFragmentListener 
                 getString(R.string.no_data_found)
             }
         }
-        init("https://yfat.co.il/?m=1&utm_source=facebook&utm_content=kakiBePita&utm_campaign=YnetPlus")
-//        init("support@3p-cups.com")
-//        init("0504527975")//selectedText)
+        init(selectedText)
     }
 
     private fun init(selectedText: String = "") {
